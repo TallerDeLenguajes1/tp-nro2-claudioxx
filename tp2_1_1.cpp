@@ -12,7 +12,7 @@ int main(){
 			mt[f][c]=c;
 		}
 	}
-
+//Claudio.
 	for(f = 0;f<N; f++){
  		for(c = 0;c<M; c++){
 			cprintf("%d", mt[f][c]);
