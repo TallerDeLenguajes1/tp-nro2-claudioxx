@@ -1,0 +1,2 @@
+En la rama principal(master) no aparece el archivo tp2_1_2.cpp ya que fue creado en otra rama, eso si, al pasar a la rama master tambien se pueden visualizar los archivos que se crearon junto con la compilacion y ejecucion de tp2_1_2.cpp pero no este mismo.
+Luego de hacer el merge con Opcion_2 el archivo tp2_1_2.cpp pasa a estar tambien en la rama master.
