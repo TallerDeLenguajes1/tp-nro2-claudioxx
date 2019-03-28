@@ -11,15 +11,30 @@ int main(){
 	srand(time(NULL));
 	int i,C;
 	int **matriz;//Declaro Matriz.
-	int *columnas;
+	int *columnas = (int*)malloc(sizeof(int)*F);
+	//compruebo si hay lugar en la memoria.
+	if (columnas==NULL){
+		printf("NO HAY MEMORIA SUFICIENTE.");
+		exit(1);
+	}
 
 	//Le asigno memoria a la matriz.
 	matriz = (int**)malloc(sizeof(int*)*F);
+	//compruebo si hay lugar en la memoria.
+	if (matriz==NULL){
+		printf("NO HAY MEMORIA SUFICIENTE.");
+		exit(1);
+	}
 
 	//Le otorgo un lugar en la memoria a cada puntero del arreglo.
 	for(i=0;i<F;i++){
 		C = 5+(rand()%(16-5));//declaro C como un numero aleatorio entre 5 y 15.
 		matriz[i]=(int*)malloc(sizeof(int)*C);//A cada puntero le asigno memoria segun el numero de columnas.
+		//compruebo si hay lugar en la memoria.
+		if (matriz[i]==NULL){
+			printf("NO HAY MEMORIA SUFICIENTE.");
+			exit(1);
+		}
 		*(columnas+i)=C;
 	}
 
@@ -60,6 +75,11 @@ void pares(int **matriz,int *columnas){
 	int i,j,cont;
 	//Creacion del vector de pares de manera dinamica.
 	int *par=(int *)malloc(sizeof(int)*F);
+	//compruebo si hay lugar en la memoria.
+	if (par==NULL){
+		printf("NO HAY MEMORIA SUFICIENTE.");
+		exit(1);
+	}
 	printf("\n\nCantidad de numeros pares que tiene la matriz en cada fila:\n");
 	for(i=0;i<F;i++){
 		cont = 0;
